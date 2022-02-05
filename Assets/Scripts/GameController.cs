@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public int points;
+    public GameObject foodItem;
+
     // Start is called before the first frame update
     void Start()
     {
