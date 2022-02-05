@@ -5,13 +5,14 @@ using UnityEngine;
 public class ChickController : MonoBehaviour
 {
     private string key;
-    public GameController gameController;
+    private GameController gameController;
     public GameObject itemText;
     public float minSpawnTime = 1f, maxSpawnTime = 5f;
     public float dieTime = 10f;
     private bool canDie = true;
 
     private void Start() {
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         StartCoroutine(spawn());
     }
 

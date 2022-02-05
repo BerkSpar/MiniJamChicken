@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class FoodItemController : MonoBehaviour
 {
-    public GameController gameController;
+    private GameController gameController;
     public string key;
+
+    private void Start() {
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+    }
 
     private void OnTriggerEnter(Collider other) {
         gameController.foodItem = gameObject;
