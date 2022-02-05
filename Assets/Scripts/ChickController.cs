@@ -8,6 +8,8 @@ public class ChickController : MonoBehaviour
     public GameController gameController;
     public GameObject itemText;
     public float minSpawnTime = 1f, maxSpawnTime = 5f;
+    public float dieTime = 10f;
+    private bool canDie = true;
 
     private void Start() {
         StartCoroutine(spawn());
@@ -25,6 +27,7 @@ public class ChickController : MonoBehaviour
         foodItemController.DestroyItem();
 
         itemText.GetComponent<TextMesh>().text = "";
+        canDie = false;
 
         StartCoroutine(spawn());
     }
@@ -40,5 +43,9 @@ public class ChickController : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
         AskForFood();
+        
+        canDie = true;
+        yield return new WaitForSeconds(dieTime);
+        if(canDie) Destroy(gameObject);
     }
 }
