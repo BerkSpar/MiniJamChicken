@@ -12,8 +12,11 @@ public class FoodItemController : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        gameController.foodItem = gameObject;
-        gameObject.SetActive(false);
+        if (other.tag == "Player") {
+            gameController.foodItem = gameObject;
+            gameObject.SetActive(false);
+        }
+
     }
 
     public void DestroyItem() {

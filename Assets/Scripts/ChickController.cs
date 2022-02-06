@@ -7,9 +7,9 @@ public class ChickController : MonoBehaviour
     private string key;
     private GameController gameController;
     public GameObject itemText;
-    public float minSpawnTime = 1f, maxSpawnTime = 5f;
-    public float dieTime = 10f;
-    private bool canDie = true;
+    public float minSpawnTime = 3f, maxSpawnTime = 7f;
+    public float dieTime = 15f;
+    private bool canDie = false;
 
     private void Start() {
         gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();

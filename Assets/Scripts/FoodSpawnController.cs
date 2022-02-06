@@ -6,24 +6,31 @@ public class FoodSpawnController : MonoBehaviour
 {
     public GameObject foodItem;
     public float waitTime = 2f;
+    public float opacity = 0.2f;
     private bool canSpawn = false;
 
-    private MeshRenderer meshRenderer;
-    private Color color;
+    private MeshRenderer[] meshRenderers;
 
     private void Start() {
-        meshRenderer = this.GetComponent<MeshRenderer>();
-        color = meshRenderer.material.color;
+        meshRenderers = this.GetComponentsInChildren<MeshRenderer>();
     }
 
     private void OnTriggerEnter(Collider other) { 
-        meshRenderer.material.color = new Color(color.r, color.g, color.b, 0.5f);
+        if (other.tag == "Player") {
+            foreach(MeshRenderer meshRenderer in meshRenderers) {
+                foreach(Material material in meshRenderer.materials)
+                    material.color = new Color(material.color.r, material.color.g, material.color.b, opacity);
+            }
 
-        StartCoroutine(spawn());
+            StartCoroutine(spawn());
+        }
     }
 
     private void OnTriggerExit(Collider other) { 
-        meshRenderer.material.color = new Color(color.r, color.g, color.b, 1f);
+        foreach(MeshRenderer meshRenderer in meshRenderers) {
+            foreach(Material material in meshRenderer.materials)
+                material.color = new Color(material.color.r, material.color.g, material.color.b, 1f);
+        }
 
         canSpawn = false;
     }
@@ -33,8 +40,8 @@ public class FoodSpawnController : MonoBehaviour
         canSpawn = true;
         yield return new WaitForSeconds(waitTime);
 
-        float x = Random.Range(-10, 10);
-        float z = Random.Range(-10, 10);
+        float x = Random.Range(-2, 2);
+        float z = Random.Range(-3, 3);
 
         Vector3 location = new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z);
 
