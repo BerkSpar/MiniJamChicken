@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 3.0.0 commit date:2021-12-02, commit time:18:35, hash:f1cca3055776</authoring_tool>
+    </contributor>
+    <created>2022-02-06T20:36:59</created>
+    <modified>2022-02-06T20:36:59</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="bagua-effect">
+      <profile_COMMON>
+        <newparam sid="balao_balde_png-surface">
+          <surface type="2D">
+            <init_from>balao_balde_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="balao_balde_png-sampler">
+          <sampler2D>
+            <source>balao_balde_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="balao_balde_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="bminhoca-effect">
+      <profile_COMMON>
+        <newparam sid="balao_minhoca_png-surface">
+          <surface type="2D">
+            <init_from>balao_minhoca_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="balao_minhoca_png-sampler">
+          <sampler2D>
+            <source>balao_minhoca_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="balao_minhoca_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="bmilho-effect">
+      <profile_COMMON>
+        <newparam sid="balao_milho_png-surface">
+          <surface type="2D">
+            <init_from>balao_milho_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="balao_milho_png-sampler">
+          <sampler2D>
+            <source>balao_milho_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="balao_milho_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="bcenoura-effect">
+      <profile_COMMON>
+        <newparam sid="balao_cenoura_png-surface">
+          <surface type="2D">
+            <init_from>balao_cenoura_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="balao_cenoura_png-sampler">
+          <sampler2D>
+            <source>balao_cenoura_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="balao_cenoura_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="balao_balde_png" name="balao_balde_png">
+      <init_from>balao_balde.png</init_from>
+    </image>
+    <image id="balao_cenoura_png" name="balao_cenoura_png">
+      <init_from>balao_cenoura.png</init_from>
+    </image>
+    <image id="balao_milho_png" name="balao_milho_png">
+      <init_from>balao_milho.png</init_from>
+    </image>
+    <image id="balao_minhoca_png" name="balao_minhoca_png">
+      <init_from>balao_minhoca.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="bagua-material" name="bagua">
+      <instance_effect url="#bagua-effect"/>
+    </material>
+    <material id="bminhoca-material" name="bminhoca">
+      <instance_effect url="#bminhoca-effect"/>
+    </material>
+    <material id="bmilho-material" name="bmilho">
+      <instance_effect url="#bmilho-effect"/>
+    </material>
+    <material id="bcenoura-material" name="bcenoura">
+      <instance_effect url="#bcenoura-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Plane_006-mesh" name="Plane.006">
+      <mesh>
+        <source id="Plane_006-mesh-positions">
+          <float_array id="Plane_006-mesh-positions-array" count="33">0.7333406 -1 0 0.3763785 -0.7678247 0 0.01553612 -0.8454251 0 -0.3918663 -0.7717046 0 -0.8768695 -0.3061017 0 -0.8768695 0.4543831 0 -0.4392495 0.8531103 0 0.2714473 0.9268622 0 0.7273659 0.6452652 0 0.9285063 0.2362792 0 0.6871377 -0.581692 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_006-mesh-positions-array" count="11" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_006-mesh-normals">
+          <float_array id="Plane_006-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_006-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_006-mesh-map-0">
+          <float_array id="Plane_006-mesh-map-0-array" count="54">0.8636829 0.8226326 0.6357236 0.963431 0.6881893 0.1160876 0.06156522 0.7271916 0.06156522 0.3469492 0.2803753 0.9265553 0.06156522 0.3469492 0.3040668 0.1141477 0.2803753 0.9265553 0.3040668 0.1141477 0.507768 0.07728743 0.2803753 0.9265553 0.507768 0.07728743 0.6881893 0.1160876 0.6357236 0.963431 0.2803753 0.9265553 0.507768 0.07728743 0.6357236 0.963431 0.6881893 0.1160876 0.8666703 0 0.8435688 0.209154 0.8435688 0.209154 0.9642532 0.6181396 0.6881893 0.1160876 0.9642532 0.6181396 0.8636829 0.8226326 0.6881893 0.1160876</float_array>
+          <technique_common>
+            <accessor source="#Plane_006-mesh-map-0-array" count="27" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_006-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_006-mesh-positions"/>
+        </vertices>
+        <triangles material="bagua-material" count="9">
+          <input semantic="VERTEX" source="#Plane_006-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_006-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_006-mesh-map-0" offset="2" set="0"/>
+          <p>8 0 0 7 0 1 1 0 2 5 0 3 4 0 4 6 0 5 4 0 6 3 0 7 6 0 8 3 0 9 2 0 10 6 0 11 2 0 12 1 0 13 7 0 14 6 0 15 2 0 16 7 0 17 1 0 18 0 0 19 10 0 20 10 0 21 9 0 22 1 0 23 9 0 24 8 0 25 1 0 26</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_005-mesh" name="Plane.005">
+      <mesh>
+        <source id="Plane_005-mesh-positions">
+          <float_array id="Plane_005-mesh-positions-array" count="33">0.7333406 -1 0 0.3763785 -0.7678247 0 0.01553612 -0.8454251 0 -0.3918663 -0.7717046 0 -0.8768695 -0.3061017 0 -0.8768695 0.4543831 0 -0.4392495 0.8531103 0 0.2714473 0.9268622 0 0.7273659 0.6452652 0 0.9285063 0.2362792 0 0.6871377 -0.581692 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_005-mesh-positions-array" count="11" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_005-mesh-normals">
+          <float_array id="Plane_005-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_005-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_005-mesh-map-0">
+          <float_array id="Plane_005-mesh-map-0-array" count="54">0.8636829 0.8226326 0.6357236 0.963431 0.6881893 0.1160876 0.06156522 0.7271916 0.06156522 0.3469492 0.2803753 0.9265553 0.06156522 0.3469492 0.3040668 0.1141477 0.2803753 0.9265553 0.3040668 0.1141477 0.507768 0.07728743 0.2803753 0.9265553 0.507768 0.07728743 0.6881893 0.1160876 0.6357236 0.963431 0.2803753 0.9265553 0.507768 0.07728743 0.6357236 0.963431 0.6881893 0.1160876 0.8666703 0 0.8435688 0.209154 0.8435688 0.209154 0.9642532 0.6181396 0.6881893 0.1160876 0.9642532 0.6181396 0.8636829 0.8226326 0.6881893 0.1160876</float_array>
+          <technique_common>
+            <accessor source="#Plane_005-mesh-map-0-array" count="27" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_005-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_005-mesh-positions"/>
+        </vertices>
+        <triangles material="bminhoca-material" count="9">
+          <input semantic="VERTEX" source="#Plane_005-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_005-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_005-mesh-map-0" offset="2" set="0"/>
+          <p>8 0 0 7 0 1 1 0 2 5 0 3 4 0 4 6 0 5 4 0 6 3 0 7 6 0 8 3 0 9 2 0 10 6 0 11 2 0 12 1 0 13 7 0 14 6 0 15 2 0 16 7 0 17 1 0 18 0 0 19 10 0 20 10 0 21 9 0 22 1 0 23 9 0 24 8 0 25 1 0 26</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane_004-mesh" name="Plane.004">
+      <mesh>
+        <source id="Plane_004-mesh-positions">
+          <float_array id="Plane_004-mesh-positions-array" count="33">0.7333406 -1 0 0.3763785 -0.7678247 0 0.01553612 -0.8454251 0 -0.3918663 -0.7717046 0 -0.8768695 -0.3061017 0 -0.8768695 0.4543831 0 -0.4392495 0.8531103 0 0.2714473 0.9268622 0 0.7273659 0.6452652 0 0.9285063 0.2362792 0 0.6871377 -0.581692 0</float_array>
+          <technique_common>
+            <accessor source="#Plane_004-mesh-positions-array" count="11" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_004-mesh-normals">
+          <float_array id="Plane_004-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane_004-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane_004-mesh-map-0">
+          <float_array id="Plane_004-mesh-map-0-array" count="54">0.8636829 0.8226326 0.6357236 0.963431 0.6881893 0.1160876 0.06156522 0.7271916 0.06156522 0.3469492 0.2803753 0.9265553 0.06156522 0.3469492 0.3040668 0.1141477 0.2803753 0.9265553 0.3040668 0.1141477 0.507768 0.07728743 0.2803753 0.9265553 0.507768 0.07728743 0.6881893 0.1160876 0.6357236 0.963431 0.2803753 0.9265553 0.507768 0.07728743 0.6357236 0.963431 0.6881893 0.1160876 0.8666703 0 0.8435688 0.209154 0.8435688 0.209154 0.9642532 0.6181396 0.6881893 0.1160876 0.9642532 0.6181396 0.8636829 0.8226326 0.6881893 0.1160876</float_array>
+          <technique_common>
+            <accessor source="#Plane_004-mesh-map-0-array" count="27" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane_004-mesh-vertices">
+          <input semantic="POSITION" source="#Plane_004-mesh-positions"/>
+        </vertices>
+        <triangles material="bmilho-material" count="9">
+          <input semantic="VERTEX" source="#Plane_004-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane_004-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane_004-mesh-map-0" offset="2" set="0"/>
+          <p>8 0 0 7 0 1 1 0 2 5 0 3 4 0 4 6 0 5 4 0 6 3 0 7 6 0 8 3 0 9 2 0 10 6 0 11 2 0 12 1 0 13 7 0 14 6 0 15 2 0 16 7 0 17 1 0 18 0 0 19 10 0 20 10 0 21 9 0 22 1 0 23 9 0 24 8 0 25 1 0 26</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Plane-mesh" name="Plane">
+      <mesh>
+        <source id="Plane-mesh-positions">
+          <float_array id="Plane-mesh-positions-array" count="33">0.7333406 -1 0 0.3763785 -0.7678247 0 0.01553612 -0.8454251 0 -0.3918663 -0.7717046 0 -0.8768695 -0.3061017 0 -0.8768695 0.4543831 0 -0.4392495 0.8531103 0 0.2714473 0.9268622 0 0.7273659 0.6452652 0 0.9285063 0.2362792 0 0.6871377 -0.581692 0</float_array>
+          <technique_common>
+            <accessor source="#Plane-mesh-positions-array" count="11" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane-mesh-normals">
+          <float_array id="Plane-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Plane-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane-mesh-map-0">
+          <float_array id="Plane-mesh-map-0-array" count="54">0.8636829 0.8226326 0.6357236 0.963431 0.6881893 0.1160876 0.06156522 0.7271916 0.06156522 0.3469492 0.2803753 0.9265553 0.06156522 0.3469492 0.3040668 0.1141477 0.2803753 0.9265553 0.3040668 0.1141477 0.507768 0.07728743 0.2803753 0.9265553 0.507768 0.07728743 0.6881893 0.1160876 0.6357236 0.963431 0.2803753 0.9265553 0.507768 0.07728743 0.6357236 0.963431 0.6881893 0.1160876 0.8666703 0 0.8435688 0.209154 0.8435688 0.209154 0.9642532 0.6181396 0.6881893 0.1160876 0.9642532 0.6181396 0.8636829 0.8226326 0.6881893 0.1160876</float_array>
+          <technique_common>
+            <accessor source="#Plane-mesh-map-0-array" count="27" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane-mesh-vertices">
+          <input semantic="POSITION" source="#Plane-mesh-positions"/>
+        </vertices>
+        <triangles material="bcenoura-material" count="9">
+          <input semantic="VERTEX" source="#Plane-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane-mesh-map-0" offset="2" set="0"/>
+          <p>8 0 0 7 0 1 1 0 2 5 0 3 4 0 4 6 0 5 4 0 6 3 0 7 6 0 8 3 0 9 2 0 10 6 0 11 2 0 12 1 0 13 7 0 14 6 0 15 2 0 16 7 0 17 1 0 18 0 0 19 10 0 20 10 0 21 9 0 22 1 0 23 9 0 24 8 0 25 1 0 26</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="balao_agua" name="balao agua" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 -4.37114e-8 -3.55271e-15 -1.797466 0 1 0 0 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_006-mesh" name="balao agua">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="bagua-material" target="#bagua-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="balao_minhoca" name="balao minhoca" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 -4.37114e-8 -3.55271e-15 -1.797466 0 1 0 0 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_005-mesh" name="balao minhoca">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="bminhoca-material" target="#bminhoca-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="balao_milho" name="balao milho" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 -4.37114e-8 -3.55271e-15 -1.797466 0 1 0 0 0 0 0 1</matrix>
+        <instance_geometry url="#Plane_004-mesh" name="balao milho">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="bmilho-material" target="#bmilho-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="balao_cenoura" name="balao cenoura" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 -4.37114e-8 -3.55271e-15 -1.797466 0 1 0 0 0 0 0 1</matrix>
+        <instance_geometry url="#Plane-mesh" name="balao cenoura">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="bcenoura-material" target="#bcenoura-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
