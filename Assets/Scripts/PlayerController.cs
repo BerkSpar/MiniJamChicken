@@ -15,13 +15,10 @@ public class PlayerController : MonoBehaviour {
 
         float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
         
-        // transform.rotation =  Quaternion.Euler(new Vector3(0f,angle*-1,0f));
         GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(new Vector3(0f,angle*-1,0f)));
 
         if (isRunning) {
-        //    transform.Translate(speed, 0, 0);
-        // gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward*speed);
-        GetComponent<Rigidbody>().AddRelativeForce(new Vector3(1,0,0)*speed,ForceMode.Force);
+            GetComponent<Rigidbody>().AddRelativeForce(new Vector3(1,0,0)*speed,ForceMode.Force);
         }
         animator.SetBool("Running", isRunning);
 
