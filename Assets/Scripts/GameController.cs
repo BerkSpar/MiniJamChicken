@@ -14,11 +14,11 @@ public class GameController : MonoBehaviour
 
     public void PlayGame ()
     {
-        camera.GetComponent<Camera>().orthographicSize = 6.0f;
         menu.SetActive(false);
-        player.GetComponent<PlayerController>().isRunning = true;
-        
+        // camera.GetComponent<Camera>().orthographicSize = 6.0f;
+        StartCoroutine(AnimateCamera());
     }
+
     void PauseGame ()
     {
         Time.timeScale = 0;
@@ -30,14 +30,21 @@ public class GameController : MonoBehaviour
         isPaused = false;
     }
 
-    void Start()
-    {
-        
+    public void Quit() {
+        Application.Quit();
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    IEnumerator AnimateCamera()
     {
-        
+        while(camera.GetComponent<Camera>().orthographicSize < 6f){
+            camera.GetComponent<Camera>().orthographicSize += 0.1f;
+            yield return new WaitForSeconds(.05f);
+
+            if (camera.GetComponent<Camera>().orthographicSize > 4.5f)
+                player.GetComponent<PlayerController>().isRunning = true;
+        }
+
     }
+
 }
