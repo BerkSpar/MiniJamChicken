@@ -8,7 +8,7 @@ public class ChickController : MonoBehaviour
     private GameController gameController;
     public float minSpawnTime = 3f, maxSpawnTime = 7f;
     public float dieTime = 15f;
-    private bool canDie = false;
+    public float currentDieTime = 15f;
     public bool isDied = false;
 
     public GameObject corn;
@@ -16,11 +16,12 @@ public class ChickController : MonoBehaviour
     public GameObject carrot;
     public GameObject water;
 
+    public InterfaceFoodController interfaceFoodController;
 
     private void Start() {
         gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
-        StartCoroutine(spawn());
         SetIcon(key);
+        StartCoroutine(spawn());
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -35,14 +36,20 @@ public class ChickController : MonoBehaviour
 
         foodItemController.DestroyItem();
 
-        canDie = false;
+        currentDieTime = dieTime;
         key = "";
         SetIcon(key);
 
         StartCoroutine(spawn());
     }
 
+    void Update() {
+        interfaceFoodController.timer = (int)currentDieTime;
+    }
+
     private void SetIcon(string key) {
+        interfaceFoodController.SetIcon(key);
+
         worm.SetActive(false);
         carrot.SetActive(false);
         water.SetActive(false);
@@ -77,13 +84,15 @@ public class ChickController : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
         AskForFood();
         
-        canDie = true;
-        yield return new WaitForSeconds(dieTime);
-
-        if(canDie) {
-            isDied = true;
-            gameObject.SetActive(false);
-            gameController.SetHP();
+        currentDieTime = dieTime;
+        while(currentDieTime > 0) {
+            yield return new WaitForSeconds(1);
+            currentDieTime -= 1;
         }
+
+        isDied = true;
+        interfaceFoodController.SetActive(false);
+        gameObject.SetActive(false);
+        gameController.SetHP();
     }
 }
