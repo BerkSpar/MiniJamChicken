@@ -6,8 +6,30 @@ public class GameController : MonoBehaviour
 {
     public int points;
     public GameObject foodItem;
+    public static bool isPaused = false;
+    public GameObject camera;
+    public GameObject menu;
+    public GameObject player;
 
-    // Start is called before the first frame update
+
+    public void PlayGame ()
+    {
+        camera.GetComponent<Camera>().orthographicSize = 6.0f;
+        menu.SetActive(false);
+        player.GetComponent<PlayerController>().isRunning = true;
+        
+    }
+    void PauseGame ()
+    {
+        Time.timeScale = 0;
+        isPaused = true;
+    }
+    void ResumeGame ()
+    {
+        Time.timeScale = 1;
+        isPaused = false;
+    }
+
     void Start()
     {
         
