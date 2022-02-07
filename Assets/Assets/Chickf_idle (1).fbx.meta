@@ -6,7 +6,42 @@ ModelImporter:
   - first:
       74: -8639993316982285888
     second: Armature.001|ArmatureAction.001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bico
+    second: {fileID: 2100000, guid: 8270460c831c6f546a093f9a758e1a95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corpo
+    second: {fileID: 2100000, guid: 33ab46e8494f23140905e458e5beef8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: detalhes
+    second: {fileID: 2100000, guid: 4d2a7e7a46cef604488cc6535337bdd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: laco
+    second: {fileID: 2100000, guid: 08017f8eb618ec84b8ae2f18129061c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: olho branco
+    second: {fileID: 2100000, guid: 02ca7bf0620aa9d43b717847a13a2ee1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: olho preto
+    second: {fileID: 2100000, guid: 422b0e4efbc63f8498f1d686e29413fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ovo
+    second: {fileID: 2100000, guid: 6e441c94eb29a604bb05818c77cf9abe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -97,7 +132,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
