@@ -9,8 +9,8 @@ public class ChickController : MonoBehaviour
     public float minSpawnTime = 3f, maxSpawnTime = 7f;
     public float dieTime = 15f;
     private bool canDie = false;
+    public bool isDied = false;
 
-    public MeshRenderer popup;
     public GameObject corn;
     public GameObject worm;
     public GameObject carrot;
@@ -31,6 +31,7 @@ public class ChickController : MonoBehaviour
         if (foodItemController.key != key) return;
 
         gameController.points += 1;
+        gameController.SetIcon("");
 
         foodItemController.DestroyItem();
 
@@ -78,6 +79,11 @@ public class ChickController : MonoBehaviour
         
         canDie = true;
         yield return new WaitForSeconds(dieTime);
-        if(canDie) Destroy(gameObject);
+
+        if(canDie) {
+            isDied = true;
+            gameObject.SetActive(false);
+            gameController.SetHP();
+        }
     }
 }

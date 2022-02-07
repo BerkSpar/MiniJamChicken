@@ -15,6 +15,7 @@ public class FoodItemController : MonoBehaviour
         if (other.tag == "Player") {
             gameController.foodItem = gameObject;
             gameObject.SetActive(false);
+            gameController.SetIcon(key);
         }
 
     }
