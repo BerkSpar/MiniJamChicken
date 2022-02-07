@@ -26,7 +26,7 @@ public class InterfaceFoodController : MonoBehaviour
         if(timer < 10) {
             timerText.color = Color.red;
         } else {
-            timerText.color = Color.white;
+            timerText.color = Color.black;
         }
     }
 
