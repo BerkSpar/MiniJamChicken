@@ -8,8 +8,9 @@ public class GameController : MonoBehaviour
     public int points;
     public GameObject foodItem;
     public static bool isPaused = false;
-    public GameObject camera;
+    private GameObject Camera;
     public GameObject menu;
+    public GameObject pause;
     public GameObject player;
     public Text scoreText;
 
@@ -26,6 +27,8 @@ public class GameController : MonoBehaviour
     public ChickController chick1;
     public ChickController chick2;
     public ChickController chick3;
+
+    public GameObject camera { get => camera; set => Camera = value; }
 
     public void PlayGame ()
     {
@@ -51,17 +54,30 @@ public class GameController : MonoBehaviour
     }
 
     void FixedUpdate() {
-        scoreText.text = "Score: " + points * 10;
-    }
+        {scoreText.text = "Score: " + points * 10;
+        }
+     }
+
+     void Update(){
+                         if (Input.GetKeyDown ("escape")) {
+             if(isPaused == true){
+                Time.timeScale = 1.0f;
+                 pause.gameObject.SetActive (false);
+             } else {
+                Time.timeScale = 0.0f;
+                 pause.gameObject.SetActive (true);
+             }
+         }
+     }
 
     
     IEnumerator AnimateCamera()
     {
-        while(camera.GetComponent<Camera>().orthographicSize < 6f){
-            camera.GetComponent<Camera>().orthographicSize += 0.1f;
+        while(Camera.GetComponent<Camera>().orthographicSize < 6f){
+            Camera.GetComponent<Camera>().orthographicSize += 0.1f;
             yield return new WaitForSeconds(.05f);
 
-            if (camera.GetComponent<Camera>().orthographicSize > 4.5f)
+            if (Camera.GetComponent<Camera>().orthographicSize > 4.5f)
                 player.GetComponent<PlayerController>().isRunning = true;
         }
     }
