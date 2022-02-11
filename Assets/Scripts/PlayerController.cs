@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour {
     public bool isRunning = false;
 
     public Animator animator;
+    public ParticleSystem peninha;
+
+
+      
 
     void FixedUpdate () {
         Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
@@ -18,14 +22,19 @@ public class PlayerController : MonoBehaviour {
         GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(new Vector3(0f,angle*-1,0f)));
 
         if (isRunning) {
+            peninha.Play();
             GetComponent<Rigidbody>().AddRelativeForce(new Vector3(1,0,0)*speed,ForceMode.Force);
         }
+        else {
+            peninha.Pause();
+        }
         animator.SetBool("Running", isRunning);
-
-
+       
     }
 
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
+
+
 }

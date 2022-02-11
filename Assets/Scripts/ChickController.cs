@@ -92,7 +92,7 @@ public class ChickController : MonoBehaviour
 
         isDied = true;
         interfaceFoodController.SetActive(false);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
         gameController.SetHP();
     }
 }

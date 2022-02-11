@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     public int points;
     public GameObject foodItem;
-    public static bool isPaused = false;
-    private GameObject Camera;
+    public bool isPlaying = false;
+    public GameObject Camera;
     public GameObject menu;
     public GameObject pause;
+     public GameObject end;
     public GameObject player;
     public Text scoreText;
+
+    public Text finalScore;
 
     public GameObject corn;
     public GameObject worm;
@@ -27,46 +31,57 @@ public class GameController : MonoBehaviour
     public ChickController chick1;
     public ChickController chick2;
     public ChickController chick3;
+    
 
-    public GameObject camera { get => camera; set => Camera = value; }
-
+    void Start ()
+    {
+        Time.timeScale= 1;
+    }    
     public void PlayGame ()
     {
         menu.SetActive(false);
-
         StartCoroutine(AnimateCamera());
     }
 
-    void PauseGame ()
+    public void Reload ()
     {
-        Time.timeScale = 0;
-        isPaused = true;
+        // Time.timeScale= 1;
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+            
     }
 
-    void ResumeGame ()
+    public void ReloadMenu ()
     {
-        Time.timeScale = 1;
-        isPaused = false;
+        // Time.timeScale= 1;
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+        PlayGame();
+        
     }
-
+    
     public void Quit() {
         Application.Quit();
     }
 
     void FixedUpdate() {
-        {scoreText.text = "Score: " + points * 10;
-        }
+        scoreText.text = "Score: " + points * 10;
+        finalScore.text =  (points * 10).ToString();
      }
 
+    
+    public void SwitchPause() {
+                    isPlaying= !isPlaying;
+            pause.gameObject.SetActive (!isPlaying);  
+            Time.timeScale =isPlaying?1f:0f;
+    }
      void Update(){
-                         if (Input.GetKeyDown ("escape")) {
-             if(isPaused == true){
-                Time.timeScale = 1.0f;
-                 pause.gameObject.SetActive (false);
-             } else {
-                Time.timeScale = 0.0f;
-                 pause.gameObject.SetActive (true);
-             }
+        if (Input.GetKeyDown ("escape")) SwitchPause();
+
+         if (chick1==null&&chick2==null&&chick3==null){
+            end.gameObject.SetActive (true);
+            isPlaying= false;
+            Time.timeScale =0;
          }
      }
 
